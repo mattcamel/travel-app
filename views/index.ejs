@@ -1,0 +1,36 @@
+<% include ./partials/header %>
+
+<div class="ui main text container">
+	<div class="column">
+		<div class="ui huge header title">
+			Places
+			<% if(typeof(foundTag) !== "undefined"){ %>
+				 / <%= foundTag %>
+			<% }; %>
+		</div>
+		<div class="ui raised segment">
+			<% var i = 0;
+			foundPosts.forEach(function(post){ %>
+			<a class="ui large header" href="/id/<%= post._id %>"><%= post.site %> - <%= post.region %>, <%= post.country %></a>
+			<div>
+				<%= post.dateAdded.toDateString() %>
+			</div>
+			<a href="/tag/<%= post.tag %>"><%= post.tag %></a>
+			<div class="ui segment">
+				<img class="ui image preview" src="<%= post.image %>">
+			</div>
+			<div class="content">
+				<p><%- post.content.substring(0,200) %> ...</p>
+				<a href="<% post.link %>"><%= post.link %></a>
+			</div>
+			<a class="ui secondary button" href="/id/<%= post._id %>">Read More</a>
+			<% i++;
+			if(i < foundPosts.length){ %>
+				<div class="ui divider index"></div>
+			<% };
+			}); %>
+		</div>
+	</div>
+</div>
+
+<% include ./partials/footer %>

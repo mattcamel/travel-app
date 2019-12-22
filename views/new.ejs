@@ -1,0 +1,55 @@
+<% include ./partials/header %>
+
+<div class="ui main text container">
+	<div class="column">
+		<h3 class="ui dividing header">Add new destination</h3>
+		<form class="ui inverted form" action="/index" method="POST">
+			<div class="field">
+				<label>Location</label>
+				<div class="three fields">
+					<div class="field">
+						<input type="text" name="post[site]" placeholder="Site Name">
+					</div>
+					<div class="field">
+						<input type="text" name="post[region]" placeholder="Region">
+					</div>
+					<div class="field">
+						<input type="text" name="post[country]" placeholder="Country">
+					</div>
+				</div>
+			</div>
+			<div class="field">
+				<label>Tag</label>
+				<select class="ui fluid dropdown" name="post[tag]">
+				<option value="">Select Tag</option>
+				<option value="Adventure">Adventure</option>
+				<option value="Art">Art</option>
+				<option value="Culture">Culture</option>
+				<option value="Design">Design</option>
+				<option value="Food">Food</option>
+				<option value="Hike">Hike</option>
+				<option value="History">History</option>
+				<option value="Nature">Nature</option>
+				<option value="Scuba">Scuba</option>
+				<option value="Other">Other</option>
+				</select>
+			</div>
+			<div class="field">
+				<label>Image</label>
+				<input type="text" name="post[image]" placeholder="Link to image">
+			</div>
+			<div class="field">
+				<label>Content</label>
+				<textarea name="post[content]" placeholder="Add some details"></textarea>
+			</div>
+			<div class="field">
+				<label>Link to more info</label>
+				<input type="text" name="post[link]" placeholder="Link to more info">
+			</div>
+			<input type="submit" class="ui secondary button">
+		</form>
+	</div>
+</div>
+
+
+<% include ./partials/footer %>

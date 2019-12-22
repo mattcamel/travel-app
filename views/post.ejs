@@ -1,0 +1,26 @@
+<% include ./partials/header %>
+
+<div class="ui main text container">
+	<div class="column">
+		<% var post = foundPost %>
+		<h2 class="ui huge header title"><%= post.site %></h2>
+		<div class="ui raised segment">
+			<a class="ui large header"><%= post.site %> - <%= post.region %>, <%= post.country %></a>
+			<div>
+				<%= post.dateAdded.toDateString() %>
+			</div>
+			<a href="/tag/<%= post.tag %>"><%= post.tag %></a>
+			<div class="ui segment">
+				<img class="ui image full" src="<%= post.image %>">
+			</div>
+			<div class="content">
+				<p><%- post.content %></p>
+				<a href="<% post.link %>"><%= post.link %></a>
+			</div>
+			<div class="ui divider"></div>
+			<a class="ui secondary button" href="/id/<%= post._id %>/edit">Edit Post</a>
+		</div>
+	</div>
+</div>
+
+<% include ./partials/footer %>
